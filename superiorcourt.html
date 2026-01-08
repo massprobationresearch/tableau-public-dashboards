@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Superior Court Dashboards</title>
-   <style>
+    <meta charset="UTF-8">
+  <title>Superior Dashboards</title>
+
+  <style>
     body {
-      font-family: Cambria, sans-serif;  /* font Cambria */
+      font-family: Cambria, sans-serif; /* Cambria font */
       background-color: #1F2C5C; /* Dark Blue background */
       color: #FFFFFF; /* white font */
+    }
+    label, select, option {
+      font-family: Cambria, sans-serif; /* Cambria font */
+      color: lightgray;
     }
     h1 { 
        font-size: 48px; /* title font size */
@@ -20,21 +26,65 @@
     a {
       color: lightgray;
     }
+    select {
+      padding: 12px;
+      font-size: 22px;
+    }
+    .info {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      border: 1px solid #bbb;
+      max-width: 2000px;
+      color: #FFFFFF; /* white */
+    }
   </style>
 </head>
+    
 <body>
-  <div style="display: flex; align-items: center;">
+    
+    <div style="display: flex; align-items: center;">
     <img src="/tableau-public-dashboards/probationseal.jpg" alt= "Description" width="100" /> 
-    <h1>Superior Court Probation Dashboards</h1>
-    <h2 style="margin-left: 550px;"><a href="titlepage.html">back to title page</a></h2>
+    <h1>Superior Probation Dashboards</h1>
+    <h2 style="margin-left: 650px;"><a href="titlepage.html">back to title page</a></h2>
   </div>
-  <h2>Superior Probation Department MRPA</h2>
-  <p> INSERT PARAGRAPH DESCRIPTION HEREEEEEEEE about Superior Probation Department MRPA dashboard </p>
+
+  <label for="infoSelect">Choose Dashboard:</label>
+  <select id="infoSelect" onchange="showInfo()">
+    <option value="">-- Select --</option>
+    <option value="info1">Superior Probation Department MRPA</option>
+    <option value="info2">Superior Probation Department Trends</option>
+    <option value="info3">Superior Court Probation Violations</option>
+  </select>
+
+  <div id="info1" class="info">
+    <strong>Superior Probation Department MRPA</strong>
+       <p> INSERT PARAGRAPH DESCRIPTION HEREEEEEEEE about Superior Probation Department MRPA dashboard </p>
   <div class='tableauPlaceholder' id='viz1764015649920' style='position: relative'><noscript><a href='#'><img alt='Superior Court MRPA Dashboard ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;SuperiorCourtProbationDepartmentMRPA&#47;SuperiorCourtMRPADashboard&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SuperiorCourtProbationDepartmentMRPA&#47;SuperiorCourtMRPADashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;SuperiorCourtProbationDepartmentMRPA&#47;SuperiorCourtMRPADashboard&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1764015649920');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1169px';vizElement.style.height='1681px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-  <h2>Superior Probation Department Trends</h2>
-  <p> INSERT PARAGRAPH DESCRIPTION HEREEEEEEEE about Superior Probation Department Trends dashboard </p>
+ </div>
+
+  <div id="info2" class="info">
+    <strong>Superior Probation Department Trends</strong>
+     <p> INSERT PARAGRAPH DESCRIPTION HEREEEEEEEE about Superior Probation Department Trends dashboard </p>
   <div class='tableauPlaceholder' id='viz1764015691565' style='position: relative'><noscript><a href='#'><img alt='Monthly Report of Probation Activity: Superior Court Department Trends ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;SuperiorCourtProbationDepartmentTrends&#47;TrendsDashboard&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SuperiorCourtProbationDepartmentTrends&#47;TrendsDashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;SuperiorCourtProbationDepartmentTrends&#47;TrendsDashboard&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1764015691565');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1510px';vizElement.style.height='877px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-  <h2>Superior Court Probation Violations</h2>
-  <p> INSERT PARAGRAPH DESCRIPTION HEREEEEEEEE about Superior Court Probation Violations </p>
+ </div>
+
+  <div id="info3" class="info">
+    <strong>Superior Court Probation Violations</strong>
+      <p> INSERT PARAGRAPH DESCRIPTION HEREEEEEEEE about Superior Court Probation Violations </p>
   <div class='tableauPlaceholder' id='viz1764015776913' style='position: relative'><noscript><a href='#'><img alt='Superior Court Violation Notices ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;SuperiorCourtProbationViolations&#47;SuperiorCourtViolations&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SuperiorCourtProbationViolations&#47;SuperiorCourtViolations' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;SuperiorCourtProbationViolations&#47;SuperiorCourtViolations&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1764015776913');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='1227px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='1227px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+ </div>
+
+  <script>
+    function showInfo() {
+      const allInfo = document.querySelectorAll(".info");
+      allInfo.forEach(div => div.style.display = "none");
+
+      const selected = document.getElementById("infoSelect").value;
+      if (selected) {
+        document.getElementById(selected).style.display = "block";
+      }
+    }
+  </script>
+</body>
 </html>
