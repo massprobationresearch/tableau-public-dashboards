@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dropdown Info Display</title>
+  <style>
+    .info {
+      display: none;
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      max-width: 400px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="infoSelect">Choose an option:</label>
+  <select id="infoSelect" onchange="showInfo()">
+    <option value="">-- Select --</option>
+    <option value="info1">Option 1</option>
+    <option value="info2">Option 2</option>
+    <option value="info3">Option 3</option>
+  </select>
+
+  <div id="info1" class="info">
+    <strong>Option 1 Info</strong>
+    <p>This information appears when Option 1 is selected.</p>
+  </div>
+
+  <div id="info2" class="info">
+    <strong>Option 2 Info</strong>
+    <p>This content is shown when Option 2 is selected.</p>
+  </div>
+
+  <div id="info3" class="info">
+    <strong>Option 3 Info</strong>
+    <p>Details related to Option 3 appear here.</p>
+  </div>
+
+  <script>
+    function showInfo() {
+      const allInfo = document.querySelectorAll(".info");
+      allInfo.forEach(div => div.style.display = "none");
+
+      const selected = document.getElementById("infoSelect").value;
+      if (selected) {
+        document.getElementById(selected).style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>
