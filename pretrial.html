@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pretrial Unit Dashboards</title>
-   <style>
+    <meta charset="UTF-8">
+  <title>Pretrial Dashboards</title>
+
+  <style>
     body {
-      font-family: Cambria, sans-serif;  /* font Cambria */
+      font-family: Cambria, sans-serif; /* Cambria font */
       background-color: #1F2C5C; /* Dark Blue background */
       color: #FFFFFF; /* white font */
+    }
+    label, select, option {
+      font-family: Cambria, sans-serif; /* Cambria font */
+      color: lightgray;
     }
     h1 { 
        font-size: 48px; /* title font size */
@@ -20,15 +26,51 @@
     a {
       color: lightgray;
     }
+    select {
+      padding: 12px;
+      font-size: 22px;
+    }
+    .info {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      border: 1px solid #bbb;
+      max-width: 2000px;
+      color: #FFFFFF; /* white */
+    }
   </style>
 </head>
+    
 <body>
-  <div style="display: flex; align-items: center;">
+    
+    <div style="display: flex; align-items: center;">
     <img src="/tableau-public-dashboards/probationseal.jpg" alt= "Description" width="100" /> 
-    <h1>Pretrial Unit Dashboards</h1>
-    <h2 style="margin-left: 550px;"><a href="titlepage.html">back to title page</a></h2>
+    <h1>Pretrial Dashboards</h1>
+    <h2 style="margin-left: 650px;"><a href="titlepage.html">back to title page</a></h2>
   </div>
-  <h2>Pretrial Caseload Demographics</h2>
-  <p> INSERT PARAGRAPH DESCRIPTION HEREEEEEEEE about Pretrial Caseload Demographics dashboard </p>
-  <div class='tableauPlaceholder' id='viz1764018178261' style='position: relative'><noscript><a href='#'><img alt='MPS: Pretrial Caseload Demographics ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;PretrialCaseloadDemographics&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='PretrialCaseloadDemographics&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;PretrialCaseloadDemographics&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1764018178261');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1500px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1500px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='1677px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+  <label for="infoSelect">Choose Dashboard:</label>
+  <select id="infoSelect" onchange="showInfo()">
+    <option value="">-- Select --</option>
+    <option value="info1">Pretrial Caseload Demographics</option>
+  </select>
+
+  <div id="info1" class="info">
+    <strong>Pretrial Caseload Demographics</strong>
+      <p> INSERT PARAGRAPH DESCRIPTION HEREEEEEEEE about  </p>
+   <div class='tableauPlaceholder' id='viz1764018178261' style='position: relative'><noscript><a href='#'><img alt='MPS: Pretrial Caseload Demographics ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;PretrialCaseloadDemographics&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='PretrialCaseloadDemographics&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;PretrialCaseloadDemographics&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1764018178261');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1500px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1500px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='1677px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script> 
+  </div>
+
+  <script>
+    function showInfo() {
+      const allInfo = document.querySelectorAll(".info");
+      allInfo.forEach(div => div.style.display = "none");
+
+      const selected = document.getElementById("infoSelect").value;
+      if (selected) {
+        document.getElementById(selected).style.display = "block";
+      }
+    }
+  </script>
+</body>
 </html>
